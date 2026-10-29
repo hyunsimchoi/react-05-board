@@ -4,5 +4,10 @@
     padding: 0;
 }
 
-ul, ol { list-style: none; }
-a { text-decoration: none; }
+ul, ol {
+    list-style: none;
+}
+
+a {
+    text-decoration: none;
+}

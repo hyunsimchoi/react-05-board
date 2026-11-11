@@ -3,6 +3,7 @@
 import { Link, useParams } from "react-router";
 import { useEffect, useState } from "react";
 import styles from "./Detail.module.css";
+import { StyledLoading } from "../styles/commonStyle.ts";
 
 function Detail() {
     const { id } = useParams();
@@ -21,11 +22,15 @@ function Detail() {
     }, []);
 
     if (loading) {
-        return <div className={styles.loading}>본문을 불러오는 중입니다...</div>;
+        return (
+            <StyledLoading className={styles.loading}>본문을 불러오는 중입니다...</StyledLoading>
+        );
     }
 
     if (!post) {
-        return <div className={styles.loading}>존재하지 않는 게시글입니다.</div>;
+        return (
+            <StyledLoading className={styles.loading}>존재하지 않는 게시글입니다.</StyledLoading>
+        );
     }
 
     return (
